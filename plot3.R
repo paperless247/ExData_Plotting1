@@ -17,8 +17,7 @@ for(v in names(df)[3:9]){
 png(file = "plot3.png", width = 480, height = 480, units = "px", bg = "transparent")
 with(df, {
   plot(datetime, Sub_metering_1,
-       xlab = NA, ylab ="Energy sub metering", type = "n")
-  lines(datetime, Sub_metering_1, col = "black")
+       xlab = NA, ylab ="Energy sub metering", type = "l", col = "black")
   lines(datetime, Sub_metering_2, col = "red")
   lines(datetime, Sub_metering_3, col = "blue")
 })

@@ -18,17 +18,13 @@ png(file = "plot4.png", width = 480, height = 480, units = "px", bg = "transpare
 par(mfcol = c(2, 2))
 
 ## 1
-with(df, {
-  plot(datetime, Global_active_power, type = "n",
-       xlab = NA, ylab = "Global Active Power (kilowatts)")
-  lines(datetime, Global_active_power)
-})
+with(df, plot(datetime, Global_active_power, type = "l",
+              xlab = NA, ylab = "Global Active Power (kilowatts)"))
 
 ## 2
 with(df, {
   plot(datetime, Sub_metering_1,
-       xlab = NA, ylab ="Energy sub metering", type = "n")
-  lines(datetime, Sub_metering_1, col = "black")
+       xlab = NA, ylab ="Energy sub metering", type = "l", col = "black")
   lines(datetime, Sub_metering_2, col = "red")
   lines(datetime, Sub_metering_3, col = "blue")
 })
@@ -36,17 +32,11 @@ legend("topright", bty = "n", lty = c(1,1,1), col = c("black", "red", "blue"),
        legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
 
 ## 3
-with(df, {
-  plot(datetime, Voltage, type = "n",
-       xlab = NA, ylab = "Voltage (V)")
-  lines(datetime, Voltage)
-})
+with(df, plot(datetime, Voltage, type = "l",
+       xlab = NA, ylab = "Voltage (V)"))
 
 ## 4
-with(df, {
-  plot(datetime, Global_reactive_power, type = "n",
-       xlab = NA, ylab = "Global Reactive Power (kilowatts)")
-  lines(datetime, Global_reactive_power)
-})
+with(df, plot(datetime, Global_reactive_power, type = "l",
+       xlab = NA, ylab = "Global Reactive Power (kilowatts)"))
 
 dev.off()

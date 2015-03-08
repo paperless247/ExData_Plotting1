@@ -15,9 +15,6 @@ for(v in names(df)[3:9]){
 
 # plot2: Global_active_power in the two days
 png(file = "plot2.png", width = 480, height = 480, units = "px", bg = "transparent")
-with(df, {
-  plot(datetime, Global_active_power, type = "n",
-       xlab = NA, ylab = "Global Active Power (kilowatts)")
-  lines(datetime, Global_active_power)
-})
+with(df, plot(datetime, Global_active_power, type = "l",
+       xlab = NA, ylab = "Global Active Power (kilowatts)"))
 dev.off()
